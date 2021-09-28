@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<button>1</button>  
+<button>2</button>  
+<button>3</button>  
+<button>4</button>
+<script>
+  // var btn=document.querySelectorAll('button')
+  // for(var i=0;i<btn.length;i++){
+  // //  var没有块级作用域,当循环到最后时i=4,相当于将4赋值给i,那么btn[i]里的i也变成4了
+  //   btn[i].addEventListener('click',function(){
+  //     console.log('第'+i+'个被打印了');
+  //      console.log(i);
+  //   })
+  // }
+  var btn=document.querySelectorAll('button')
+  for(var i=0;i<btn.length;i++){
+    (function(i){
+      btn[i].addEventListener('click', function () {
+      console.log('第'+i+'个被打印了');
+       console.log(i);
+    }) 
+    })(i)
+  }
+  // for(let i=0;i<btn.length;i++){
+  //   //let有块级作用域,btn[i]里的i就是当前的i,每执行一次循环,就执行一次里面的代码,i=当前的i ,在自己作用域内,外面的i不能改变自己的i
+  //   btn[i].addEventListener('click',function(){
+  //     console.log('第'+i+'个被打印了');
+  //      console.log(i);
+  //   })
+  // }
+</script>  
+</body>
+</html>

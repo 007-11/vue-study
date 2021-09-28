@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    [v-cloak]{
+display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+<h2 v-once>{{message}}</h2>
+<h2 >{{message}}</h2>
+<h3 v-pre>{{message}}</h3>
+<h5 v-cloak>{{message}}</h5>
+<h4 v-html='url'></h4>
+<img  v-bind:src="imgurl" alt="">
+<img :src="imgurl" alt="">
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    const app=new Vue({
+      el:'#app',
+      data:{
+        message:'你好呀',
+        url:'<a href="http://www.baidu.com">百度一下</a>',
+        imgurl:'https://img.alicdn.com/imgextra/i4/6000000006079/O1CN01UgldDg1umEO3UOIDC_!!6000000006079-0-octopus.jpg'
+      }
+    })
+  </script>
+</body>
+</html>

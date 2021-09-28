@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    
+    <button @click='get'>1</button>
+    <button @click='set()'>2</button>
+    <button @click='gets(123)'>3</button>
+    <button @click='gets()'>4</button>
+    <!-- 在事件定义时,写方法时省略了小括号,但方法本身需要一个参数的,这个时候vue会默认将浏览器生产的event事件对象作为参数传入到方法 -->
+    <button @click='gets'>5</button>
+<!-- 方法定义时,我们需要浏览器event 对象,同时又需要其他参数 -->
+<!-- 我们需要用 $event 来获取到浏览器event对象 -->
+    <button @click='btn("abc",$event)'>6</button>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        message:"你好",
+
+    },
+      methods: {
+get(){
+  console.log('get');
+},
+set(){
+  console.log('set');
+},
+gets(a){
+  console.log(a);
+},
+btn(a,event){
+console.log(a);
+console.log(event);
+}
+      }
+    });
+  </script>
+</body>
+
+</html>

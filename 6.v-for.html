@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .color {
+      color: pink;
+    }
+
+    .size {
+      font-size: 36px;
+    }
+
+    .title {
+      font-weight: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+   <ul>
+     <li v-for='(m,index) in movies':class="{'color':num==index}" @click='btn(index)'>{{m}}</li>
+   </ul>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: '你好呀',
+        url: '<a href="http://www.baidu.com">百度一下</a>',
+        imgurl: 'https://img.alicdn.com/imgextra/i4/6000000006079/O1CN01UgldDg1umEO3UOIDC_!!6000000006079-0-octopus.jpg',
+      movies:['你好','哈哈','嘿嘿'],
+      a:false,
+      num:0
+      },
+      methods: {
+btn:function(e){
+ this.num=e
+}
+      }
+    })
+  </script>
+</body>
+
+</html>
