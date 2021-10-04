@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for='value in info':key='value'>{{value}}</li>
+    </ul>
+    <ul>
+      <li v-for='(value,key,index) in info'>{{value}}-{{key}}-{{index}}</li>
+    </ul>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {message:"你好",
+      info:{
+        name:'李姣蓉',
+        age:18,
+        type:'美女'
+      }
+      },
+      methods: {}
+    });
+  </script>
+</body>
+
+</html>

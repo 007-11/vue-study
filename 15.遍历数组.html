@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+<ul>
+  <li v-for='e in names'>{{e}}</li>
+</ul>
+<ul>
+  <!-- e是元素，index是下标 -->
+  <li v-for='(e,index) in names'>{{index}}.{{e}}</li>
+</ul>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {message:"你好",
+      names:['你好i','还漏','的德国']
+      },
+      methods: {}
+    });
+  </script>
+</body>
+
+</html>

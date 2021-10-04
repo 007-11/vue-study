@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <span v-if='is'>
+      <label for="username">用户登录</label>
+      <input type="text"placeholder='用户账户'id='username'key='username'>
+    </span>
+    <span v-else>
+      <label for="email">邮箱登录</label>
+      <input type="text" placeholder='用户邮箱'id='email'key='email'>
+    </span>
+    <button @click='is=!is'>切换登录方式</button>
+    <h2 v-show='isshow'>你好呀</h2>
+    
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {message:"你好",
+      is:true,
+      isshow:false
+      },
+      methods: {}
+    });
+  </script>
+</body>
+
+</html>

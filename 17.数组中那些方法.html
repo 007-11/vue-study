@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+<ul>
+  <li v-for='e in letter'>{{e}}</li>
+</ul>
+<button @click='btn'>按钮</button>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+      message:"你好",
+      letter:['a','b','c','d','e']
+      },
+      methods: {
+        btn(){
+
+
+          // 1.push()响应式将元素加到数组最后
+// this.letter.push('aaa');
+
+
+
+// 2.pop()响应式 删除数组最后的元素
+// this.letter.pop()
+
+
+// 3.shift()响应式 删除数组第一个元素
+          // this.letter.shift()
+
+
+          // 4.unshift() 在数组最前面添加一个元素
+          // this.letter.unshift('www')
+          // this.letter.unshift('www','qqq','eee')
+
+
+          // 5.splice() 从下标为1的开始，删除3个元素，如果没有后面的3，就删除从1开始之后所有的元素
+// this.letter.splice(1,3)
+// 从1开始删除5个元素，再将后面的字符串传入数组
+          // this.letter.splice(1,5,'ttt','uuu','iii')
+          // this.letter.splice(1,0,'yyy','ppp')
+
+// 6.sort()排序
+// this.letter.sort()
+// 7.reverse()
+//  this.letter.reverse()
+// 8.Vue.set()
+Vue.set(this.letter,0,'kkk')
+
+// 注意：一下不是响应式,他改变不了页面的数据
+// this.letter[0]='lllll'
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

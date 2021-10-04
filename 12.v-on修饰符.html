@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 修饰符 .prevent -->
+    <form action="baidu"@submit.prevent>
+      <input type="submit" value="提交"@click.stop.prevent='btn'>
+    </form>
+    <br>
+<div @click='set'>
+  <!-- 修饰符 .stop -->
+      <button @click.stop='get'>1</button>
+   
+</div>
+<!-- keyup.enter 修饰符 -->
+<input type="text" name="" id="" @keyup.enter='keyup'>
+<!-- once修饰符 -->
+<button @click.once='once'>once修饰符</button>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        message:"你好"
+      },
+      methods: {
+        get(){
+          console.log('get');
+        },
+        set(){
+          console.log('set');
+        },
+        btn(){
+           console.log('btn');
+        },
+        keyup(){
+          console.log('keyup');
+        },
+        once(){
+          console.log('once');
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
